@@ -25,6 +25,7 @@ namespace WebApi
             };
 
             config.Filters.Add(new LoginCheckAttribute());
+            config.Filters.Add(new GlobalExceptionAttribute());
 
             config.MapHttpAttributeRoutes();
 

@@ -22,6 +22,16 @@ namespace Lexun.Template.Api.Controllers
         }
 
         /// <summary>
+        /// 异常处理
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public  ResultView Get(int id)
+        {
+            throw new Exception("异常了");
+        }
+
+        /// <summary>
         /// 添加用户信息
         /// </summary>
         /// <returns></returns>
