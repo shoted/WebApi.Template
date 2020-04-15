@@ -12,6 +12,7 @@ namespace WebApi
     {
         public static void Register()
         {
+            if(UCommon.IsProduction) return;
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
             GlobalConfiguration.Configuration
