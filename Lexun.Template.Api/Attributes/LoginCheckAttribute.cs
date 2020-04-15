@@ -29,6 +29,7 @@ namespace Lexun.Template.Api.Attributes
             var controllerName = dic["controller"].ToString();
             var requestMethod = actionContext.Request.Method.Method;
             if (IsDoNotNeedLoginController(controllerName, requestMethod)) return;
+            if (User != null && User.UserId > 0) return;
             actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized)
             {
                 Content = new StringContent(JsonConvert.SerializeObject(new ResultView(HttpStatusCode.Unauthorized, null, "请先登录")))
